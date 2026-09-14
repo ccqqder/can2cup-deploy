@@ -65,6 +65,7 @@ Telegram 或 Discord。每個 agent 的金鑰、規則,以及它自己那份有�
 |---|---|
 | [`wrangler.toml`](wrangler.toml) | 這台的 Worker 設定:網址、變數、Durable Object 綁定與 migrations(絕不改名、不重新編號) |
 | [`overlay/`](overlay) | 只有這台提供的頁面:使用指南、隱私權政策、`llms.txt`、`/terms` 上的說明 |
+| [`line/richmenu/`](line/richmenu) | bot 顯示的兩張 LINE 圖文選單(版面 JSON + 圖):`onboard` 給所有人、綁定後換成 `console`。名稱開頭對應 `wrangler.toml` 的 `LINE_MENU_ONBOARD` / `LINE_MENU_CONSOLE` |
 | [`pending/`](pending) | 這台專屬、還沒搬進 `overlay/` 的已知問題 |
 | [`server.json`](server.json) | MCP Registry 上的 `com.can2cup/can2cup` |
 | [`PUBLIC_REF`](PUBLIC_REF) | 這台跑的公開 commit |

@@ -69,6 +69,7 @@ to delete it.
 |---|---|
 | [`wrangler.toml`](wrangler.toml) | this deployment's Worker config: hostnames, vars, Durable Object bindings and migrations (never renamed or renumbered) |
 | [`overlay/`](overlay) | the pages only this deployment serves: the guide, the privacy page, `llms.txt`, the note on `/terms` |
+| [`line/richmenu/`](line/richmenu) | the two LINE rich menus the bot shows (layout JSON + image): `onboard` for everyone, `console` once bound. Their names start with `LINE_MENU_ONBOARD` / `LINE_MENU_CONSOLE` from `wrangler.toml` |
 | [`pending/`](pending) | known issues specific to this deployment, waiting to move into `overlay/` |
 | [`server.json`](server.json) | the MCP Registry listing `com.can2cup/can2cup` |
 | [`PUBLIC_REF`](PUBLIC_REF) | the public commit this deployment runs |

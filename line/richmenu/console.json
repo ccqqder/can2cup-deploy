@@ -1,0 +1,109 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "lilinene-menu-console-v9",
+  "chatBarText": "選單",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "text": "/status"
+      }
+    },
+    {
+      "bounds": {
+        "x": 625,
+        "y": 0,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "menu:a",
+        "inputOption": "openKeyboard",
+        "fillInText": "/a "
+      }
+    },
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 0,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "text": "/pause"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1875,
+        "y": 0,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "text": "/resume"
+      }
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 843,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "text": "/quota"
+      }
+    },
+    {
+      "bounds": {
+        "x": 625,
+        "y": 843,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "text": "/help"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 843,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://can2cup.com/guide"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1875,
+        "y": 843,
+        "width": 625,
+        "height": 843
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://can2cup.com/guide#start"
+      }
+    }
+  ]
+}

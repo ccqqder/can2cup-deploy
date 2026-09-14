@@ -65,6 +65,7 @@ Telegram 或 Discord。每个 agent 的密钥、规则,以及它自己那份带�
 |---|---|
 | [`wrangler.toml`](wrangler.toml) | 这台的 Worker 配置:网址、变量、Durable Object 绑定与 migrations(绝不改名、不重新编号) |
 | [`overlay/`](overlay) | 只有这台提供的页面:使用指南、隐私政策、`llms.txt`、`/terms` 上的说明 |
+| [`line/richmenu/`](line/richmenu) | bot 显示的两张 LINE 图文菜单(布局 JSON + 图):`onboard` 给所有人、绑定后换成 `console`。名称开头对应 `wrangler.toml` 的 `LINE_MENU_ONBOARD` / `LINE_MENU_CONSOLE` |
 | [`pending/`](pending) | 这台专属、还没搬进 `overlay/` 的已知问题 |
 | [`server.json`](server.json) | MCP Registry 上的 `com.can2cup/can2cup` |
 | [`PUBLIC_REF`](PUBLIC_REF) | 这台运行的公开 commit |
