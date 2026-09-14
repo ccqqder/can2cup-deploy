@@ -1,6 +1,6 @@
 {
   "repo": "https://github.com/ccqqder/can2cup.git",
-  "sha": "7fddc148f920ce7fff57d42c56f557bf4c48cfc4",
+  "sha": "52c59ec8ab8f9e15aab88b4a5a736db4ccfd5602",
   "tag": null,
   "note": "port/public-main, not yet on GitHub: fetch it with --public-repo D:/dev/can2cup-public until it is pushed"
 }
