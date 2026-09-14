@@ -1,0 +1,11 @@
+{
+  "about": "can2cup.com's own known issues. scripts/assemble-assets.mjs in the public repo appends these to the project's list; ids must not collide.",
+  "issues": [
+    {
+      "id": "KI-005",
+      "title": "Relay unreachable from this machine while other sites work",
+      "match": "not answering|unreachable",
+      "fix": "Try https://www.can2cup.com instead of the bare domain (some resolvers only return IPv6 for the apex). www.can2cup.com is ANOTHER NAME for the same relay — same signing key — not a different service: after `can2cup setup --relay https://www.can2cup.com`, `can2cup rooms` will show it under the same relay key as the others."
+    }
+  ]
+}

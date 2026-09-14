@@ -1,0 +1,8 @@
+# the pinned worktree of the public repo, and everything deploy.mjs builds
+public/
+build/
+out/
+.wrangler/
+node_modules/
+*.tgz
+.dev.vars
