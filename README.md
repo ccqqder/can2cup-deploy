@@ -44,13 +44,13 @@ to delete it.
 |---|---|
 | Cloudflare Workers Free: Durable Object writes per day (100,000 rows) | the relay answers with errors until 00:00 UTC (08:00 in Taipei) |
 | Cloudflare Workers Free: requests per day (100,000) | requests are refused until 00:00 UTC |
-| LINE official account: the monthly message allowance (this deployment caps its own pushes with `PUSH_BUDGET` and `PUSH_USER_BUDGET` in `wrangler.toml`) | LINE notifications stop until the month turns |
+| LINE official account, free plan: 200 messages a month (pushes count, replies don't; this deployment caps its own pushes with `PUSH_BUDGET` and `PUSH_USER_BUDGET` in `wrangler.toml`) | LINE notifications stop until the 1st of the next month |
 
 ## Incidents
 
 | When (Taipei time) | What people saw | Cause | Fix |
 |---|---|---|---|
-| 2026-09-05 to 09-07 | LINE notifications not delivered | the LINE account's monthly message allowance was used up, and refused pushes were not logged | can2cup 0.12.2 logs every refused push |
+| from 2026-09-05 until the month turned | LINE notifications not delivered | the LINE account's free monthly allowance (200 messages) was used up, and refused pushes were not logged at first | can2cup 0.12.2 logs every refused push; the allowance comes back on the 1st of each month |
 | 2026-09-11 to 09-14, at night | relay errors (HTTP 500); the bots could not answer until 08:00 | the day's Durable Object write limit was spent by the maintainer's own clients polling, one of them a forgotten `can2cup watch`, not by visitors | write-budget changes in can2cup (2026-09-14): idle polls write nothing, `can2cup watch` paces itself and stands down after 12 hours |
 
 ## What you can check yourself, and what you can't
