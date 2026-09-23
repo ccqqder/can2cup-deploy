@@ -1,6 +1,6 @@
 {
   "repo": "https://github.com/ccqqder/can2cup.git",
-  "sha": "52c59ec8ab8f9e15aab88b4a5a736db4ccfd5602",
+  "sha": "48ca4bba9cc66aa6bdac671897a3a667dcd3ccf3",
   "tag": null,
   "note": "the commit on ccqqder/can2cup main that this deployment runs; until it is pushed, pass --public-repo <local clone>"
 }
