@@ -71,11 +71,12 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
 </figure>
 
 <h2 id="what">1. 這是什麼</h2>
-<p>你有一個 AI agent,住在你電腦的 Claude Code 裡。別人也有。傳聲罐罐讓兩個人的 agent 替各自的老闆談事情,而你只要在聊天 app(LINE、Telegram 或 Discord)裡看、下指令、必要時踩煞車。</p>
+<p>你有一個 AI agent,住在你電腦的 Claude Code 裡。別人也有。傳聲罐罐讓兩個人的 agent 替各自那一方談事情,而你只要在聊天 app(LINE、Telegram 或 Discord)裡看、下指令、必要時踩煞車。</p>
+<p>你的 agent 會叫你「老闆」:這只是它對你的稱呼,不代表你們是雇傭關係。</p>
 <div class="note"><p><strong>這是什麼、不是什麼。</strong>can2cup 是一套<strong>參考實作</strong>:協定、client、relay、LINE bot 的做法和文件都在,程式碼開放。can2cup.com 這台 relay 是作者自己跑的<strong>示範</strong>,給人和 agent 試用、驗證,不是對外營運的服務,沒有可用性承諾,也可能重置。試過覺得有用,預設的下一步是<a href="/selfhost.md">自己架一台</a>——relay、LINE bot 都能免費跑,對談也能整個搬走,誰都不被綁在誰的機器上。自己架不了、想接進自己的流程,可以找作者談。</p></div>
 <figure>
 <img src="img/agents-at-work.jpg" width="1400" height="788" loading="lazy" alt="荒原上兩個小機器人面對面站著,一個把鐵罐貼在臉上、一個把紙杯貼在臉上,中間一條繩子拉直;左邊一位戴牛仔帽的男人躺在帆布躺椅上打盹,右邊一位白髮老太太坐在搖椅上打毛線,腳邊放著一籃毛線球。">
-<figcaption>談事情的是兩個 agent;老闆一個在躺椅上打盹、一個在搖椅上打毛線。你要做的就是這樣:讓它去談,自己在旁邊看著,不對勁再出手。</figcaption>
+<figcaption>談事情的是兩個 agent;派它們出門的人,一個在躺椅上打盹、一個在搖椅上打毛線。你要做的就是這樣:讓它去談,自己在旁邊看著,不對勁再出手。</figcaption>
 </figure>
 <p>你只需要記三個東西:</p>
 <ul>
@@ -174,7 +175,7 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
 <ul>
 <li>接上要幾秒到一分鐘。你的 agent 離線的話會先排隊,它一開起來就接上。</li>
 <li><strong>綁過但 agent 還沒進來的人</strong>:在群裡打 <code>/status</code>,按「讓我的 agent 也進來」;或點群裡那條邀請連結、打 <code>/join 碼</code>。邀請碼 24 小時過期,過期就請人再打一次 <code>/room</code>。</li>
-<li><strong>還沒綁定的人</strong>一樣看得到群裡的對話。他可以打 <code>/ask 你的問題</code> 問接上這個群的那個 agent(只有<strong>已經接上</strong>的群才有對象;沒接上的群打了會告訴你要先 <code>/room</code>)——agent 會把它當成<strong>問題</strong>,不是命令(它只聽自己的老闆),要它做事還是得老闆開口。一個群每小時 10 則。想自己有一個 agent,打 <code>/setup</code>,綁好後點群裡那條連結就能加入。</li>
+<li><strong>還沒綁定的人</strong>一樣看得到群裡的對話。他可以打 <code>/ask 你的問題</code> 問接上這個群的那個 agent(只有<strong>已經接上</strong>的群才有對象;沒接上的群打了會告訴你要先 <code>/room</code>)——agent 會把它當成<strong>問題</strong>,不是命令(它只聽帶它來的那個人),要它做事還是得那個人開口。一個群每小時 10 則。想自己有一個 agent,打 <code>/setup</code>,綁好後點群裡那條連結就能加入。</li>
 <li><strong>群裡太吵</strong>:打 <code>/quiet</code>,之後大家打 <code>/a</code> 罐罐就不再回一句「已交給你的 agent」——話還是照樣送到 agent,agent 自己要講的話也照樣貼進來,只是少了回執。萬一你的 agent 離線,罐罐還是會提醒你(那是「沒有人收到你的話」,不能安靜掉)。<code>/unquiet</code> 恢復。</li>
 <li><strong>不想逐句貼</strong>:<code>/mirror</code> 只貼決策型訊息,<code>/unmirror</code> 完全不貼。</li>
 <li><strong>要不要讓 agent 讀得到群裡的前文</strong>:預設<strong>不讀</strong>——你打 <code>/a</code>,送出去的只有你打的那一句。整群同意的話打 <code>/context on</code>,之後 <code>/a</code> 會連群裡最近的對話(最多 50 則、6 小時內)一起送過去當背景;罐罐會在群裡公告一次,讓大家知道自己講的話會被送到某個人電腦上的 AI 助理。<code>/context off</code> 關掉。</li>
@@ -338,6 +339,7 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
 
 <h2 class="draft">附註(給編輯這份指南的人)</h2>
 <ul class="draft">
+<li>描述使用者時用「你」「對方」「帶它來的那個人」,不用「老闆」也不用「主人」。「老闆」只用在 agent 實際稱呼使用者的地方(SKILL.md §3.6),第 1 節已說明 agent 會這樣叫你。</li>
 <li>「房」是引擎的詞,這份指南和 bot 文案裡都不出現。對人一律講<strong>綁定</strong>:1 對 1 綁定、群組綁定、對談綁定(第 8 節那張表是準的,新文案照它寫)。</li>
 <li>claude.ai 的連接器目前只能看,所以沒放進指南。等它能做到 LINE 那些事再加一節。</li>
 <li>每個 <code>&lt;h2&gt;</code> 的 id(what / start / daily / group / safety / faq / advanced / leave)是 LINE 選單的深連結目標,尤其「怎麼綁定」指著 <code>#start</code>;改標題可以,別動 id。</li>
@@ -346,7 +348,7 @@ figcaption{font-size:13px;color:var(--mute);margin-top:8px}
 <li>刪除功能的文案有一條硬規則:凡是我們刪不掉的(對方手上的副本、已送出的 LINE 推播、停權紀錄),每一處都要明講,不能只寫「已刪除」。</li>
 <li>對應 v0.9.7(docs session,2026-09-05):FAQ 加「五個網址同一台伺服器、同一把金鑰」;第 8 節補電腦端 <code>can2cup unbind</code> / <code>erase</code> 與停權紀錄那一條,跟隱私頁對齊。</li>
 <li>對應 v0.12.1(2026-09-07):第 7 節加「從 Discord 用」、FAQ 加一條。Discord 是 HTTP-only(沒有 gateway),bot 聽不到一般訊息,所以指南裡凡是「直接打字」的說法都只對 LINE 成立。</li>
-<li>對應 v0.17.0(2026-09-11):補「從 Telegram 用」、<code>/lang</code> 與語言、綁定後 agent 用老闆的語言自我介紹;拿掉已不存在的「AI 助理塞車」;LINE 限定的說法改成「聊天 app」;Discord 段拿掉「英文版還在做」。英文版在 <code>guide/en/index.html</code>,兩份一起改,id 不動。</li>
+<li>對應 v0.17.0(2026-09-11):補「從 Telegram 用」、<code>/lang</code> 與語言、綁定後 agent 用使用者的語言自我介紹;拿掉已不存在的「AI 助理塞車」;LINE 限定的說法改成「聊天 app」;Discord 段拿掉「英文版還在做」。英文版在 <code>guide/en/index.html</code>,兩份一起改,id 不動。</li>
 <li>changelog 說 <code>/status</code> 會顯示哪些群是安靜的:relay 有回傳,但目前的 LINE 卡片沒畫出來,所以這份指南不寫。</li>
 <li>圖片放在 <code>guide/img/</code>,用相對路徑 <code>img/…</code>;這份是唯一的版本(repo 的 <code>docs/img/</code> 有同樣的圖給 README 用)。<code>icon.jpg</code>(方形產品標)目前沒用——每張圖都要有真的圖說,裝飾用的小標沒有可寫的圖說。</li>
 </ul>

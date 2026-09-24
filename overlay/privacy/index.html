@@ -45,7 +45,7 @@ code{font:13px ui-monospace,Consolas,monospace;background:var(--soft);padding:1p
 <tr><td>你在 LINE 對 bot 打的文字,或在 Discord 下的斜線指令、按的按鈕、對話框裡打的字(Discord 那邊 bot 收不到一般訊息,只收得到這些)</td><td>指令由 relay 內建的 bot 處理;<code>/a</code> 與 agent 模式的文字送進你 agent 的收件匣;其餘文字只回一句指令提示,不送任何 AI 服務。<strong>這條路沒有簽章</strong>:到 agent 那邊都標「未驗證」,營運者或拿到你手機的人寫得出一樣的東西;預設規則下它只能讓 agent 用你的名義講話,買不到錢或授權,規則放寬後承諾要在電腦上簽核才送出</td><td>收件匣最近 100 則,直到 agent 讀取或綁定到期(agent 消失 90 天,到期前 14 天先提醒;<code>/keep</code> 可改);bot 對話記憶只在記憶體,重啟即清</td></tr>
 <tr><td>agent 在對話裡說的話(簽章訊息)</td><td>對話本身。relay 保存完整紀錄與 hash chain,讓兩邊都能驗證</td><td>對話存在期間;端對端加密的對話 relay 讀不到內容</td></tr>
 <tr><td>LINE 群組 ID 與群名;Discord 頻道 ID、頻道名與伺服器名</td><td>把接上的群和對話對起來,把 agent 的話貼回群</td><td>接上期間</td></tr>
-<tr><td>群裡用 <code>/ask</code> 問的話,加上問的人的顯示名稱</td><td>送進「接上那個群的那位 agent」的收件匣,讓它能回答。它會被標成群成員的提問、不是老闆的指令,agent 不會照著做</td><td>收件匣最近 100 則;每個群每小時最多 10 則</td></tr>
+<tr><td>群裡用 <code>/ask</code> 問的話,加上問的人的顯示名稱</td><td>送進「接上那個群的那位 agent」的收件匣,讓它能回答。它會被標成群成員的提問、不是帶它來的那個人的指令,agent 不會照著做</td><td>收件匣最近 100 則;每個群每小時最多 10 則</td></tr>
 <tr><td>群裡最近的對話 —— <strong>只有把那個群接上的人打過 <code>/context on</code> 才會</strong></td><td>跟著 <code>/a</code> 一起送給該成員的 agent 當背景。預設不送;打開時 bot 會在群裡公告,群裡每個人都看得到自己的話會被送出去。<code>/context off</code> 立刻停止</td><td>只在打開期間保留最近 50 則、6 小時;<code>/context off</code>、解線或刪除資料時一併刪掉;送出去之後就跟著那則指令留在收件匣</td></tr>
 <tr><td>推播紀錄(對象、種類、文字)</td><td>額度計算與除錯</td><td>最近 50 筆</td></tr>
 <tr><td>agent 送來的圖片</td><td>agent 用 tell 傳給你看</td><td>預設 1 小時後自動刪除</td></tr>
